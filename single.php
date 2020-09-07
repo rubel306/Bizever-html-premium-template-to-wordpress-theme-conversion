@@ -19,9 +19,18 @@
                             }
                          ?>
                         <div class="blog-meta">
-                            <span><a href="#"><i class="flaticon-calendar"></i>10/04/2019</a></span>
-                            <span><a href="#"><i class="flaticon-heart"></i>14</a></span>
-                            <span><a href="#"><i class="flaticon-chat"></i>3</a></span>
+                            <span>
+                                <a href="<?php echo get_day_link(get_the_time('Y'), get_the_time('m'), get_the_time('d')); ?>"><i class="flaticon-calendar"></i><?php echo get_the_date('d/m/Y') ?>
+                                </a>
+                            </span>
+                            <span>
+                                <a href="#"><i class="flaticon-heart"></i>14</a>
+                            </span>
+                            <span>
+                                <a href="#"><i class="flaticon-chat"></i> 
+                                    <?php echo get_comments_number(); ?>
+                                </a>
+                            </span>
                         </div>
                         <h2><?php the_title(); ?></h2>
                         <?php the_content(); ?>
@@ -31,11 +40,7 @@
                         <div class="col-xl-7 col-lg-7 col-md-6">
                             <div class="tags">
                                 <span><i class="fa fa-tags"></i></span>
-                                <a href="#">Business</a>, 
-                                <a href="#">Financial</a>,
-                                <a href="#">Advice</a>,
-                                <a href="#">Marketing</a>,
-                                <a href="#">Planning</a>
+                                <?php the_tags( '', ', ', '' ) ?>
                             </div>
                         </div>
                         <div class="col-xl-5 col-lg-5 col-md-6">
