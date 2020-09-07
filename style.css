@@ -10,3 +10,34 @@ Description: This is basic theme for dev
 
 
 */
+
+.blog-area .styled-pagination .page-numbers {
+    position: relative;
+    display: inline-block;
+    margin: 0px 3px 0px 0px;
+}
+.blog-area .styled-pagination .page-numbers {
+    position: relative;
+    display: inline-block;
+    line-height: 40px;
+    height: 40px;
+    font-size: 16px;
+    font-weight: 600;
+    min-width: 40px;
+    border-radius: 50%;
+    color: #292929;
+    text-align: center;
+    text-transform: capitalize;
+    transition: all 500ms ease;
+    -webkit-transition: all 500ms ease;
+    -ms-transition: all 500ms ease;
+    -o-transition: all 500ms ease;
+    -moz-transition: all 500ms ease;
+}
+.blog-area .styled-pagination a:hover, .blog-area .styled-pagination .page-numbers.current{
+	color: #ffffff;
+    background-color: #86BC42;
+}
+.pagination{
+	justify-content: center;
+}

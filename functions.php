@@ -8,8 +8,11 @@ function bizever_support(){
 	add_theme_support('automatic-feed-link' );
 	add_theme_support( 'html5', array('aside', 'gallery',' comment-list', 'comment-form', 'caption', 'search-form') );
 
-	add_image_size( 'blogPage-thumb', 350, 210, true );
+	add_theme_support( 'post-thumbnails' );
 
+	//image size 
+	add_image_size( 'bizever-blogPage-thumb', 350, 210, true );
+	add_image_size( 'bizever-blogdetails-thumb', 730, 430, true );
 
 }
 add_action('after_setup_theme', 'bizever_support');
@@ -26,6 +29,7 @@ function bizever_theme_assets(){
 	wp_enqueue_style('owl-carousel', get_theme_file_uri('/assets/css/owl.carousel.min.css'), null ,'1.0','all' );
 	wp_enqueue_style('bizever-main', get_theme_file_uri('/assets/css/main.css'), null ,'1.0','all' );
 	wp_enqueue_style('bizever-style', get_stylesheet_uri(), null ,'1.0','all' );
+
 
 	wp_enqueue_script( 'jquery-ui-core');
 	wp_enqueue_script( 'popper',get_theme_file_uri( '/assets/js/popper.js'), array('jquery'), wp_get_theme()->get('Version'), true );
