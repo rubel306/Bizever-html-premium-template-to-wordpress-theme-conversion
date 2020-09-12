@@ -198,4 +198,4 @@ $options[]    = array(
   ),
 );
 
-CSFramework_Metabox::instance( $options );
+//CSFramework_Metabox::instance( $options );

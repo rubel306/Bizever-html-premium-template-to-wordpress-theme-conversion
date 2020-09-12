@@ -11,12 +11,12 @@ Description: This is basic theme for dev
 
 */
 
-.blog-area .styled-pagination .page-numbers {
+.blog-area .styled-pagination .page-numbers, .faq-pagination .page-numbers {
     position: relative;
     display: inline-block;
     margin: 0px 3px 0px 0px;
 }
-.blog-area .styled-pagination .page-numbers {
+.blog-area .styled-pagination .page-numbers, .faq-pagination .page-numbers {
     position: relative;
     display: inline-block;
     line-height: 40px;
@@ -34,10 +34,22 @@ Description: This is basic theme for dev
     -o-transition: all 500ms ease;
     -moz-transition: all 500ms ease;
 }
-.blog-area .styled-pagination a:hover, .blog-area .styled-pagination .page-numbers.current{
+.blog-area .styled-pagination a:hover, .blog-area .styled-pagination .page-numbers.current, .faq-pagination .page-numbers.current, .faq-pagination a:hover{
 	color: #ffffff;
     background-color: #86BC42;
 }
 .pagination{
 	justify-content: center;
+}
+.faq-contents .accordion li {
+    width: 48%;
+    float: left;
+    margin-right: 1%;
+}
+.faq-pagination {
+    text-align: center;
+}
+
+.single-sidebar .main-search-form input, .single-sidebar .main-search-form input::placeholder{
+	color:#434a53;
 }

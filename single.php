@@ -131,6 +131,13 @@
 
 
                     <div class="blog-comment-form wow fadeInUp" data-wow-delay="0.3s">
+                        <?php  
+
+                            if(comments_open() || get_comments_number()){
+                                comments_template();
+                            }
+                        ?>
+
                         <h3>Leave a Comment</h3>
                         <form action="#">
                             <div class="row">

@@ -68,7 +68,7 @@
                         <?php 
                             the_posts_pagination( array(
                                 'screen_reader_text'    => '  ', 
-                                'prev_text'             => '<span class="fa fa-angle-left">', 
+                                'prev_text'             => '<span class="fa fa-angle-left"></span>', 
                                 'next_text'             => '<span class="fa fa-angle-right"></span>'
                             ) );
                          ?>

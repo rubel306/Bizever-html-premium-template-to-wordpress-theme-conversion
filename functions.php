@@ -13,6 +13,7 @@ function bizever_support(){
 	//image size 
 	add_image_size( 'bizever-blogPage-thumb', 350, 210, true );
 	add_image_size( 'bizever-blogdetails-thumb', 730, 430, true );
+	add_image_size( 'bizever-team-thumb', 203, 170, true );
 
 }
 add_action('after_setup_theme', 'bizever_support');
@@ -48,9 +49,73 @@ function bizever_theme_assets(){
 add_action('wp_enqueue_scripts', 'bizever_theme_assets');
 
 
+function bizever_sidebar_widgets(){
+	register_sidebar(array(
+		'name'  => __( 'Right Sideba', 'bizever' ), 
+		'id'	=>'right-sidebar',
+		'description'	=>__( 'This is a right sidebar widget one', 'bizever' ), 
+		'before_widget'	=> '<div class="single-sidebar">',
+		'after_widget'	=> '</div>', 
+		'before_title'	=> '<h3>', 
+		'after_title'	=>'</h3>'
+
+	));
+
+	
+
+}
+
+add_action('widgets_init', 'bizever_sidebar_widgets');
+
+
+//default add title placeholde text update
+
+function bizever_posts_editor_title_placeholder($title){
+	$post_type = get_post_type();
+
+	if($post_type == 'bizever-team'){
+		$title = 'Add Team Member Name'; 
+	} 
+	if($post_type == 'bizever-pricing'){
+		$title = 'Add New Pricing'; 
+	} 
+	if($post_type == 'bizever-faq'){
+		$title = 'Add New FAQ'; 
+	} 
+
+	if($post_type == 'page'){
+		$title = 'Add New Page Title'; 
+	} 
+	if{
+		$title = 'Add New Post Title';
+	}
+
+	return $title;
+}
+
+add_action('enter_title_here', 'bizever_posts_editor_title_placeholder');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 //inlude theme options file
 
 require_once get_template_directory().'/inc/framework/cs-framework.php';
+require_once get_template_directory().'/inc/bizever-post-types.php';
 require_once get_template_directory().'/inc/framework/options-fields.php';
 
